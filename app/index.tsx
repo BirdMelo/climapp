@@ -1,34 +1,34 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import {Arrow_forward} from '../components/Icons'
+import { useRouter } from "expo-router";
+import colors from '../components/colors'
+import { styles } from '@/components/Styles'
 export default function Index() {
+  const router = useRouter()
   return (
-    <LinearGradient colors={["#00457D","#05051F"]} style={style.container}>
+    <LinearGradient colors={[colors.gradienteStart,colors.gradienteEnd]} style={styles.container}>
       <Image source={require("../assets/images/Logo.png")}/>
       <Image source={require("../assets/images/Ilustra1.png")}/>
-      <Text style={style.title}>Boas-vindas!</Text>
-      <TouchableOpacity style={style.enterButton}>
-        <Text style={style.textButton}>Entrar</Text>
+      <Text style={welcome_style.title}>Boas-vindas!</Text>
+      <TouchableOpacity style={welcome_style.enterButton} onPress={()=>{
+        router.push('/cities')
+      }}>
+        <Text style={welcome_style.textButton}>Entrar</Text>
         <Arrow_forward/>
       </TouchableOpacity>
     </LinearGradient>
   );
 }
 
-const style = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 64
-  },
+const welcome_style = StyleSheet.create({
   title: {
     fontSize: 25,
     color: 'white',
-    fontFamily: "Montserrat"
+    fontFamily: "Montserrat_400Regular"
   },
   enterButton: {
-    backgroundColor: '#7693FF',
+    backgroundColor: colors.highlight,
     width: "65%",
     padding: 8,
     alignItems: 'center',
@@ -39,8 +39,7 @@ const style = StyleSheet.create({
   },
   textButton: {
     fontSize: 20,
-    fontWeight: "bold",
-    color: '#01080E',
-    fontFamily: "Montserrat"
+    color: colors.darkText,
+    fontFamily: "Montserrat_600SemiBold"
   }
 })

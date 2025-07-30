@@ -5,4 +5,5 @@ Neste curso, iremos explorar as principais ferramentas de depuração e monitora
 Esse projeto está sendo criado para desenvolver mais habilidades de React-Native. Criando um app chamado Climapp, para previções do tempo.
 ## Aprendido:
 
-* **1° Aula:** Preparação de ambiente vazio, utilização de novas classes para impletementação de SVG e criação de botões, utilização de LinearGradient para criar um background para com degrader
+* **1° Aula:** Preparação de ambiente vazio, utilização de novas classes para impletementação de SVG e criação de botões, utilização de LinearGradient para criar um background para com degrader.
+* **2° Aula:** Criando uma página "cities" para ver a temperatura da região. Utilizamos json para simular os dados e FlatList para criar uma lista scrollavel. Os itens da lista foram criados em components/CardCities/index.jsx para criar o template do item.
