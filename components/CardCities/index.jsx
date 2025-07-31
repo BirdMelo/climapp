@@ -1,10 +1,14 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import colors from "../colors";
 import { WeatherIcon } from "../Icons";
+import { useRouter } from "expo-router";
 
 export default function CardCity({city, temp}) {
+    const router = useRouter()
     return (
-        <TouchableOpacity style={cardStyle.card}>
+        <TouchableOpacity style={cardStyle.card} onPress={()=>{
+            router.push(`/${city.city}`)
+        }}>
             <WeatherIcon/>
             <Text style={cardStyle.cardText}>{city}</Text>
             <Text style={[cardStyle.cardText,cardStyle.cardTemp]}>{temp}°</Text>
