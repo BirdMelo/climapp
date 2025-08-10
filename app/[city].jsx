@@ -1,13 +1,14 @@
 import colors from "@/components/colors"
 import MaterialIcons from "@expo/vector-icons/MaterialIcons"
 import { LinearGradient } from "expo-linear-gradient"
-import { useLocalSearchParams } from "expo-router"
+import { useLocalSearchParams, useRouter } from "expo-router"
 import { useEffect, useState } from "react"
-import { Image, StyleSheet, Text, View } from "react-native"
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import TagDay from "@/components/TagDay"
 const CityDetails = () => {
     const searchParams = useLocalSearchParams()
     const [cityDetails, setCityDetails] = useState(null)
+    const router = useRouter()
 
     const handleData = async () => {
         try {
@@ -32,7 +33,9 @@ const CityDetails = () => {
             {cityDetails ? (
                 <View style={detailsStyle.bodyDetails}>
                     <View>
-                        <MaterialIcons name="chevron-left" size={24} color={colors.lightText} style={detailsStyle.backArrow}/>
+                        <TouchableOpacity style={detailsStyle.backArrow} onPress={()=> router.back()}>
+                            <MaterialIcons name="chevron-left" size={24} color={colors.lightText}/>
+                        </TouchableOpacity>
                         <Text style={detailsStyle.headerTitle}>
                             {cityDetails.city}
                         </Text>
@@ -84,7 +87,8 @@ const detailsStyle = StyleSheet.create({
     },
     backArrow: {
         position: 'absolute',
-        left: 0
+        left: 0,
+        zIndex: 1
     },
     bodyDetails: {
         gap: 40

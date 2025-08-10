@@ -9,3 +9,4 @@ Esse projeto está sendo criado para desenvolver mais habilidades de React-Nativ
 * **2° Aula:** Criando uma página "cities" para ver a temperatura da região. Utilizamos json para simular os dados e FlatList para criar uma lista scrollavel. Os itens da lista foram criados em components/CardCities/index.jsx para criar o template do item.
 * **3° Aula:**  terminado de personalizar o FlatList e criando um pesquisador para encontrar a cidade que o usuário queira ver. Entendendo uma maneira diferente de fazer debug, usando um "Stop" na linha desejada
 * **4° Aula:** Implementamos um arquivo JSON como banco de dados e trabalhamos com esses dados em [city.jsx].
+* **5° Aula:** Configurações finais e aprendendo como verificar uso de mémoria da aplicação.
