@@ -35,7 +35,7 @@ const Cities = () => {
                 style={cities_style.cardList}
                 data = {filteredCities}
                 renderItem={({item}) => 
-                    <CardCity city={item.city.replace(', ', ' - ')} temp={item.temp}/>
+                    <CardCity city={item} temp={item.temp}/>
                 }
                 keyExtractor={item => item.city}
                 ItemSeparatorComponent={() => <View style={{height:16}} ></View>}

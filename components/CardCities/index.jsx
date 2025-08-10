@@ -1,6 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import colors from "../colors";
-import { WeatherIcon } from "../Icons";
 import { useRouter } from "expo-router";
 
 export default function CardCity({city, temp}) {
@@ -9,8 +8,8 @@ export default function CardCity({city, temp}) {
         <TouchableOpacity style={cardStyle.card} onPress={()=>{
             router.push(`/${city.city}`)
         }}>
-            <WeatherIcon/>
-            <Text style={cardStyle.cardText}>{city}</Text>
+            <Image source={require('@/assets/images/tempIcon.png')} style={cardStyle.img}/>
+            <Text style={cardStyle.cardText}>{city.city.replace(", ", " - ")}</Text>
             <Text style={[cardStyle.cardText,cardStyle.cardTemp]}>{temp}°</Text>
         </TouchableOpacity>
     )
@@ -32,5 +31,9 @@ const cardStyle = StyleSheet.create({
     cardTemp: {
         fontFamily: 'Montserrat_700Bold',
         fontSize: 25
+    },
+    img: {
+        width: 30,
+        height:30
     }
 })
